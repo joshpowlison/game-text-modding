@@ -1,0 +1,36 @@
+# The Legend of Zelda: Wind Waker (GCN)
+
+(this is all for my own reference mostly for now, and I can't guarantee it's all accurate. It's very much experimental. Feel free to make pull requests to fix things)
+
+## Relevant Files
+
+### root > res > Msg > bmgres.arc
+
+This file appears contains all of the textbox text in the game. Most likely other text (like on the main menu) are sprites, not actual text.
+
+## Text Rules
+
+* Text starts down. You'll have to scroll a ways until you start seeing words.
+
+1. Text automatically wraps at XX characters (must determine)
+◙ : line breaks, but in sequence it appears to just be used as filler after text (the code probably pulls the text out in blocks of a fixed length)
+•(null)(null)• : Makes the text appear immediately
+→♣(null)(null) `00011010|00000101|00000000|00000000|00000000`: Player name
+
+## Process
+
+### Getting the file(s)
+
+1. Download and open up [GCRebuilder](https://www.romhacking.net/utilities/619/)
+2. Open your Wind Waker ISO
+3. Find the file *res > Msg > bmgres.arc*
+4. Right-click it and click "Export..."
+5. Save the file somewhere on your computer. You can rename it to whatever you want.
+6. Open the file in [HxD](https://mh-nexus.de/en/downloads.php?product=HxD20) (or another hex editor) (tip: set *View > Text Encoding* to *DOS/IBM-ASCII (OEM)*. Also set )
+7. Update the text that you want to (use Ctrl+F to find the text you want to replace more easily. Make sure "Search direction" is set to "All"!)
+8. Save the file (or "Save As" to keep the original)
+9. Return to GCRebuilder and find the file *res > Msg > bmgres.arg* again.
+10. Right-click it and click "Import..."
+11. Find the new version of the file and select it.
+
+You can now use the ISO and it will have the updated text.
